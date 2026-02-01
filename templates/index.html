@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IITK Ride Connect</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1 class="title">IITK Ride Connect</h1>
+
+    <div class="button-group" id="mainButtons">
+        <button class="primary-btn" onclick="showRidePanel()">Find a Ride</button>
+        <button class="secondary-btn" onclick="showDriverMenu()">Become a Driver</button>
+    </div>
+
+    <!-- Slide Down Panel -->
+    <div class="ride-panel" id="ridePanel">
+        <h2>Where are you located?</h2>
+
+        <input 
+            type="text" 
+            placeholder="Enter location manually (e.g. Hall 5, Main Gate)"
+            class="location-input"
+        >
+
+        <div class="divider">OR</div>
+
+        <button class="gps-btn" onclick="getLocation('gps')">
+            📍 Use My Current Location
+        </button>
+        <button class="primary-btn" onclick="getLocation('manual')">
+            Find Nearby Drivers
+        </button>
+
+
+        <p class="location-status" id="locationStatus"></p>
+    </div>
+    <!-- Driver Menu Panel -->
+    <div class="ride-panel" id="driverMenu">
+        <button class="primary-btn" onclick="showDriverRegistration()">New Registration</button>
+        <button class="secondary-btn" onclick="showAvailabilityPanel()">Update Availability</button>
+
+        <p class="helper-text">
+            📩 <a href="/sms-guide" class="sms-link">SMS registration guide</a>
+        </p>
+
+    </div>
+
+    <!-- Driver Registration Panel -->
+    <div class="ride-panel" id="driverRegistration">
+        <h2>Driver Registration</h2>
+
+        <input type="text" id="driverName" placeholder="Your Name" class="location-input">
+        <input type="text" id="driverPhone" placeholder="Phone Number" class="location-input">
+
+        <select id="vehicleType" class="location-input">
+            <option value="">Select Vehicle</option>
+            <option value="Bike">Bike</option>
+            <option value="Car">Car</option>
+            <option value="Auto">Auto</option>
+        </select>
+
+        <button class="primary-btn" onclick="submitDriver()">Register</button>
+        <p class="location-status" id="driverRegStatus"></p>
+    </div>
+    <!-- Update Availability Panel -->
+    <div class="ride-panel" id="availabilityPanel">
+    <h2>Update Availability</h2>
+
+    <input 
+        type="text" 
+        id="availPhone" 
+        placeholder="Phone Number" 
+        class="location-input"
+    >
+
+    <button class="primary-btn" onclick="setAvailability(true)">Available</button>
+    <button class="secondary-btn" onclick="setAvailability(false)">Unavailable</button>
+
+    <div id="locationBlock" style="display:none;">
+        <input 
+            type="text" 
+            id="availLocation" 
+            placeholder="Current Location (e.g. Hall 5)"
+            class="location-input"
+        >
+
+        <!-- ✅ NEW GPS BUTTON -->
+        <button class="gps-btn" onclick="getDriverLocation()">
+            📍 Use My Current Location
+        </button>
+
+        <button class="primary-btn" onclick="submitAvailability()">Submit</button>
+    </div>
+
+    <p class="location-status" id="availabilityStatus"></p>
+</div>
+
+
+    <p class="location-status" id="availabilityStatus"></p>
+</div>
+
+
+
+
+</div>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

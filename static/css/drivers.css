@@ -1,0 +1,126 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background: #04386c;
+    margin: 0;
+    padding: 20px;
+    color: #000;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    background: rgb(12, 40, 60);
+    padding: 20px 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+h1 {
+    margin-bottom: 5px;
+    font-size: 2rem;
+    text-align: center;
+    color: #d23f3f;
+}
+
+#locationText {
+    color: #c47e7e;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 0.95rem;
+}
+
+/* Driver Cards */
+.driver-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* spacing between text and button */
+    word-wrap: break-word;
+}
+
+.driver-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.driver-card h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #d21919;
+}
+
+.driver-card p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #c25b5b;
+    opacity: 0.85;
+}
+
+/* Highlight distance */
+.driver-card p:nth-of-type(3) {
+    font-weight: bold;
+    color: #75ea9e;
+}
+
+/* Call button */
+.call-btn {
+    display: block; /* make it block so it fills container */
+    width: 100%; /* always full width */
+    text-align: center;
+    margin-top: 10px;
+    background: #00c853;
+    color: white;
+    padding: 10px 0;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+    box-sizing: border-box; /* prevent overflow due to padding */
+}
+
+.call-btn:hover {
+    background: #00b347;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+/* Optional: No drivers message */
+#driversList p {
+    text-align: center;
+    font-size: 1rem;
+    color: #d20303;
+    margin-top: 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .driver-card {
+        padding: 12px 15px;
+    }
+
+    .call-btn {
+        font-size: 0.95rem;
+        padding: 10px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 15px 18px;
+    }
+
+    .driver-card {
+        padding: 10px 12px;
+    }
+
+    .call-btn {
+        font-size: 0.9rem;
+        padding: 10px 0;
+    }
+}

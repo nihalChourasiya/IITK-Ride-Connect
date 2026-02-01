@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SMS Registration Guide | IITK Ride Connect</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f7fb;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .command-box {
+            background: #f1f3f8;
+            border-left: 5px solid #4a6cf7;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 6px;
+        }
+
+        .command-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #222;
+        }
+
+        .command {
+            font-family: monospace;
+            background: #fff;
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px dashed #ccc;
+            margin-top: 6px;
+        }
+
+        .note {
+            font-size: 13px;
+            color: #555;
+            margin-top: 5px;
+        }
+
+        .footer {
+            text-align: center;
+            font-size: 12px;
+            color: #777;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>📩 SMS Registration Guide</h1>
+    <p class="subtitle">Register & update availability using SMS</p>
+
+    <div class="command-box">
+        <div class="command-title">🆕 New Driver Registration</div>
+        <div class="command">
+            IITKRC REG &lt;driver_name&gt; &lt;vehicle_type&gt;
+        </div>
+        <div class="note">
+            Example: <br>
+            <b>IITKRC REG Rahul Bike</b>
+        </div>
+    </div>
+
+    <div class="command-box">
+        <div class="command-title">🟢 Mark Yourself Available</div>
+        <div class="command">
+            IITKRC AVLBL &lt;your location&gt;
+        </div>
+
+        <div class="note">
+            Use when you are ready to take rides
+        </div>
+    </div>
+
+    <div class="command-box">
+        <div class="command-title">🔴 Mark Yourself Unavailable</div>
+        <div class="command">
+            IITKRC UNAVLBL
+        </div>
+        <div class="note">
+            Use when you are busy or offline
+        </div>
+    </div>
+
+    <div class="footer">
+        IITK Ride Connect • SMS-based driver system
+    </div>
+</div>
+
+</body>
+</html>
