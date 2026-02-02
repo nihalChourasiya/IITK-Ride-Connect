@@ -1,3 +1,4 @@
+import os
 from bson import ObjectId
 from flask import Flask, render_template, request, jsonify, session
 from flask_cors import CORS
@@ -7,12 +8,13 @@ from datetime import datetime
 from math import radians, sin, cos, sqrt, atan2
 
 app = Flask(__name__)
-app.secret_key = "secret123"
+app.secret_key = os.getenv("SECRET_KEY")
 CORS(app)
 
 
 latest_rider_location = {}
-MONGODB_URI = "mongodb+srv://nihal:nihalccc@cluster0.popnsvj.mongodb.net/?appName=Cluster0"
+
+MONGODB_URI = os.getenv("MONGO_URI")
 
 client = MongoClient(MONGODB_URI)
 db = client["mydb"]
@@ -386,4 +388,4 @@ def delete_driver(driver_id):
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host='0.0.0.0',debug=True)
